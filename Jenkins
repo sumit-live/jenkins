@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'pull docker image to host react-app'
+                sh 'docker pull sumitsaini341/react-app:latest'
+                echo 'Build the React app'
+                
+            }
+        }
+        stage('Unit and Integration Tests') {
+            steps {
+                echo 'Running unit tests with JUnit.'
+                echo 'Running integration tests with TestNG.'await page.goto('http://localhost:3000/')
+            }
+        }
+        stage('Deploy to Staging') {
+            steps {
+                echo 'Deploying the application to a staging server (AWS EC2 instance).'
+            }
+        }
+    }
+    post {
+        always {
+                emailext attachLog: true, body: "${currentBuild.result}: ${BUILD_URL}", compressLog: true, 
+                         subject: "Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}", to: 'sumitsaini341@gmail.com'
+                }
+                
+    }
+
+}
