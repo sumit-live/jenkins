@@ -1,27 +1,25 @@
-import React, { useState } from 'react';
+import Card from './Card';
 
-const Navbar = () => {
-  // State to track the active link
-  const [activeLink, setActiveLink] = useState('Introduction');
-
-  // Function to handle click on a link
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
-
+const Education = () => {
   return (
-    <nav className="bg-gray-800 p-4 fixed top-0 w-full z-10">
-      <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-xl font-bold">My Portfolio</div>
-        <ul className="flex space-x-4">
-          <li><a href="#Introduction" className={`text-gray-300 hover:text-white ${activeLink === 'Introduction' ? 'text-white' : ''}`} onClick={() => handleLinkClick('Introduction')}>Introduction</a></li>
-          <li><a href="#Education" className={`text-gray-300 hover:text-white ${activeLink === 'Education' ? 'text-white' : ''}`} onClick={() => handleLinkClick('Education')}>Education</a></li>
-          <li><a href="#Projects" className={`text-gray-300 hover:text-white ${activeLink === 'Projects' ? 'text-white' : ''}`} onClick={() => handleLinkClick('Projects')}>Projects</a></li>
-          <li><a href="#Internships" className={`text-gray-300 hover:text-white ${activeLink === 'Internships' ? 'text-white' : ''}`} onClick={() => handleLinkClick('Internships')}>Internships</a></li>
-        </ul>
+    <Card title="Education">
+      <div className="flex flex-wrap -mx-2">
+        <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
+          <Card title="Deakin University, Burwood, Melbourne, Australia">
+            <p id='Education'>Masters of Data Science (July 2023 - Present)</p>
+            <p>Courses: Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Databases, Data Analytics</p>
+          </Card>
+        </div>
+        <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
+          <Card title="University Institute of Engineering and Technology, Kurukshetra University, Kurukshetra, India">
+            <p>Bachelor of Technology - Electronics and Communications (July 2016 - May 2020)</p>
+            <p>GPA: 6.81</p>
+            <p>Courses: Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases, Micro-controllers and Micro-processors</p>
+          </Card>
+        </div>
       </div>
-    </nav>
+    </Card>
   );
 };
 
-export default Navbar;
+export default Education;
