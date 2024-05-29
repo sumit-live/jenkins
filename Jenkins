@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'pull docker image to host react-app'
-                sh 'docker pull sumitsaini341/react-app:latest'
+                sh 'docker build -t react-app .'
                 echo 'Build the React app'
-                
             }
         }
         stage('Unit and Integration Tests') {
             steps {
+                sh 'npm run dev'
                 echo 'Running unit tests with JUnit.'
                 sh 'npm run test'
             }
