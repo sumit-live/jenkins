@@ -9,8 +9,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'pull docker image to host react-app'
-                sh 'docker build -t react-app .'
+                sh 'node install'
                 echo 'Build the React app'
+                sh 'node run dev'
             }
         }
         stage('Unit and Integration Tests') {
