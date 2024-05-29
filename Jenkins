@@ -11,12 +11,10 @@ pipeline {
                 echo 'pull docker image to host react-app'
                 sh 'npm install'
                 echo 'Build the React app'
-                sh 'npm run dev'
             }
         }
         stage('Unit and Integration Tests') {
             steps {
-                sh 'npm run dev'
                 echo 'Running unit tests with JUnit.'
                 sh 'npm run test'
             }
@@ -24,6 +22,7 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 echo 'Deploying the application to a staging server (AWS EC2 instance).'
+                sh 'npm run dev'
             }
         }
     }
