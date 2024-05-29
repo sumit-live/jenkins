@@ -21,8 +21,7 @@ pipeline {
         }
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploying the application to a staging server (AWS EC2 instance).'
-                sh 'npm run dev'
+                echo 'Deploying the application github actions.'
             }
         }
     }
