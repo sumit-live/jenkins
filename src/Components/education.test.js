@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Education from '../Components/Education';
+import Education from './Education';
 
 describe('Education Component', () => {
   it('renders without crashing', () => {
