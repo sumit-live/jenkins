@@ -16,6 +16,8 @@ This project is aimed at creating a portfolio website to showcase my work and sk
 - JavaScript
 - Bootstrap
 - React
+- Playwright for testing
+- cloudflare for reverse proxy
 
 ## Getting Started
 
