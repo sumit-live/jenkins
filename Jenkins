@@ -13,7 +13,7 @@ pipeline {
         stage('Unit and Integration Tests') {
             steps {
                 echo 'Running unit tests with JUnit.'
-                echo 'Running integration tests with TestNG.'await page.goto('http://localhost:3000/')
+                sh 'npm run test'
             }
         }
         stage('Deploy to Staging') {
