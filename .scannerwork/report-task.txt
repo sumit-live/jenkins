@@ -1,0 +1,6 @@
+projectKey=sumit-live_jenkins_34477197-f2f7-4022-a1e0-45327f9e8e30
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=sumit-live_jenkins_34477197-f2f7-4022-a1e0-45327f9e8e30
+ceTaskId=005a0e74-773b-4484-973e-db571e6320f4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=005a0e74-773b-4484-973e-db571e6320f4
